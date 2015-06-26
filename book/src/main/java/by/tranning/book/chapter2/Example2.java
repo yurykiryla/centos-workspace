@@ -1,4 +1,4 @@
-package by.tranning.book.chain2;
+package by.tranning.book.chapter2;
 
 public class Example2 {
 
