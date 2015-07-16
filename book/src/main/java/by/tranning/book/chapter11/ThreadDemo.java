@@ -5,15 +5,14 @@ public class ThreadDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		new NewThread();
+		new NewThread("One");
+		new NewThread("Two");
+		new NewThread("Three");
 		
 		try
 		{
-			for (int i = 5; i > 0; i--)
-			{
-				System.out.println("Main thread: " + i);
-				Thread.sleep(1000);
-			}
+			
+			Thread.sleep(10000);
 		}
 		catch (InterruptedException e)
 		{

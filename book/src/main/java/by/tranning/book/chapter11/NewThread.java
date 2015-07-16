@@ -2,11 +2,14 @@ package by.tranning.book.chapter11;
 
 public class NewThread implements Runnable {
 
+	String name;
+	
 	Thread t;
 	
-	public NewThread() {
-		t = new Thread(this, "Demo Thread");
-		System.out.println("Demo thread has created:" + t);
+	public NewThread(String threadname) {
+		name = threadname;
+		t = new Thread(this, name);
+		System.out.println("New thread: " + t);
 		t.start();
 	}
 	
@@ -16,13 +19,13 @@ public class NewThread implements Runnable {
 
 		try{
 			for (int i = 5; i > 0; i--){
-				System.out.println("Demo thread: " + i);
-				Thread.sleep(500);
+				System.out.println(name + ": " + i);
+				Thread.sleep(1000);
 			}
 		}catch (InterruptedException e){
-			System.out.println("Demo thread was interrupted");
+			System.out.println(name + " was interrupted");
 		}
-		System.out.println("Demo thread finished");
+		System.out.println(name+ " finished");
 	}
 
 }
